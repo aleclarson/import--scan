@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`"from" identifier in import statement 1`] = `
+Array [
+  "from",
+]
+`;
+
+exports[`block comments 1`] = `Array []`;
+
+exports[`escaped block comment 1`] = `
+Array [
+  "2",
+]
+`;
+
+exports[`import calls 1`] = `
+Array [
+  "foo",
+  "bar",
+  "event-stream",
+]
+`;
+
+exports[`import statements 1`] = `
+Array [
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+]
+`;
+
+exports[`line comments 1`] = `Array []`;
+
+exports[`mixed import and require 1`] = `
+Array [
+  "1",
+  "2",
+  "3",
+]
+`;
+
+exports[`require calls 1`] = `
+Array [
+  "bar",
+  "foo",
+  "event-stream",
+]
+`;
+
+exports[`shared path between imports 1`] = `
+Array [
+  "foo",
+  "bar",
+]
+`;
+
+exports[`unclosed block comment 1`] = `Array []`;

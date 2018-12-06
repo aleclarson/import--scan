@@ -1,0 +1,27 @@
+{
+  "name": "import-scan",
+  "version": "0.1.0",
+  "description": "Find import paths in a string of JavaScript",
+  "repository": "aleclarson/import-scan",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "devDependencies": {
+    "@sucrase/jest-plugin": "^2.0.0",
+    "@types/jest": "^23.3.5",
+    "codecov": "^3.1.0",
+    "jest": "^23.6.0",
+    "prettier": "^1.15.2",
+    "tslint": "^5.11.0",
+    "tslint-mango": "^0.1.6",
+    "typescript": "^3.1.6"
+  },
+  "scripts": {
+    "build": "tsc -p .",
+    "watch": "tsc -p . --watch",
+    "test": "jest --coverage",
+    "debug": "jest -i --watch --no-cache"
+  }
+}
