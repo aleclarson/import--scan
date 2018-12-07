@@ -1,4 +1,4 @@
-export function getImports(code: string) {
+export function importScan(code: string) {
   let imports: string[] = []
   let lexer = /(\/\/.*$)|(\/\*)|(?:^[ \t]*import(?: [^\n]+? from)?[ ]+["'`]([^"'`]+)["'`])|(?:(?<=[^\w.$])(?:require|import)\(\s*["'`]([^"'`]+)["'`]\s*\))/gm
   while (true) {
