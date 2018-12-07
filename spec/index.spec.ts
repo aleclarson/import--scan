@@ -1,8 +1,8 @@
-import { getImports } from '../src'
+import { importScan } from '../src'
 
 test('import statements', () => {
   expect(
-    getImports(`
+    importScan(`
       import xyz from '1';
       import * as name from \`2\`;
       import { foo } from "3";
@@ -18,7 +18,7 @@ test('import statements', () => {
 
 test('import calls', () => {
   expect(
-    getImports(`
+    importScan(`
       let loadFoo = () => import("foo")
       let barPromise = import('bar');
       import(\`event-stream\`)
@@ -28,7 +28,7 @@ test('import calls', () => {
 
 test('require calls', () => {
   expect(
-    getImports(`
+    importScan(`
       let bar = require('bar');
       let foo = require("foo")
       require(\`event-stream\`);
@@ -43,7 +43,7 @@ test('require calls', () => {
 
 test('mixed import and require', () => {
   expect(
-    getImports(`
+    importScan(`
       import '1';
       require('2');
       import('3');
@@ -52,12 +52,12 @@ test('mixed import and require', () => {
 })
 
 test('"from" identifier in import statement', () => {
-  expect(getImports(`import { from } from 'from'`)).toMatchSnapshot()
+  expect(importScan(`import { from } from 'from'`)).toMatchSnapshot()
 })
 
 test('shared path between imports', () => {
   expect(
-    getImports(`
+    importScan(`
       import { foo1 } from 'foo'
       import { bar } from 'bar'
       import { foo2 } from 'foo'
@@ -67,7 +67,7 @@ test('shared path between imports', () => {
 
 test('line comments', () => {
   expect(
-    getImports(`
+    importScan(`
       // require('foo')
       // import bar from 'bar'
     `)
@@ -76,7 +76,7 @@ test('line comments', () => {
 
 test('block comments', () => {
   expect(
-    getImports(`
+    importScan(`
       /* require('foo') */
       /* import xyz from 'xyz' */
       /*
@@ -89,7 +89,7 @@ test('block comments', () => {
 
 test('escaped block comment', () => {
   expect(
-    getImports(`
+    importScan(`
       /* \\*/ require('1') */
       /* \\\\*/ require('2')
       /* \\\\\\*/ require('3') */
@@ -98,5 +98,5 @@ test('escaped block comment', () => {
 })
 
 test('unclosed block comment', () => {
-  expect(getImports('/* import foo from "foo"')).toMatchSnapshot()
+  expect(importScan('/* import foo from "foo"')).toMatchSnapshot()
 })
