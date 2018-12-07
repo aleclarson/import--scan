@@ -19,7 +19,7 @@ Tiny `import` scanner
 ### Usage
 
 ```js
-import {parseImports} from 'import-scan'
+import {importScan} from 'import-scan'
 
-let importedNames = parseImports(code)
+let imported = importScan(code)
 ```
