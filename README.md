@@ -15,3 +15,11 @@ Tiny `import` scanner
 - string literals only
 - supports `import` statements, `require()` calls, and `import()` calls
 - avoids several edge cases (see the tests)
+
+### Usage
+
+```js
+import {parseImports} from 'import-scan'
+
+let importedNames = parseImports(code)
+```
