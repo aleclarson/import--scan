@@ -1,6 +1,6 @@
 {
   "name": "import-scan",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Find import paths in a string of JavaScript",
   "repository": "aleclarson/import-scan",
   "license": "MIT",
